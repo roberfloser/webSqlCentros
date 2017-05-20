@@ -1,0 +1,96 @@
+<!-- Página de ALTA / EDICIÓN  de registros.  -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>UF3 PAC2 - Roberto Flores Serino</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Roberto Flores Serino">
+    
+    <script type="text/javascript" src="motor.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+ 
+</head>
+<body id="alta">
+    <header>
+        <h1>ILERNA</h1><br>
+        <h3>CENTRO INTEGRAL DE FORMACIÓN PROFESIONAL</h3>
+    </header>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+			<li><a href="listadoCentros.html">LISTADO CENTRO</a></li>
+			<li><a href="altaCentros.html">EDICIÓN CENTRO</a></li>
+        </ul>
+    </div>
+    <!-- Tenemos 3 divs que por defecto están ocultos. Se mostrará uno u otro según la selección que hagamos en el selector--> 
+    <section>
+        <h3>ALTA / EDICIÓN</h3>
+        <!-- Selector de acción -->
+        <label for="seleccion">¿Que operación deseas realizar?</label>
+        <select name="seleccion" onChange="elegirOpcion(this)">
+            <option value="" selected>Escoge una opción</option>
+            <option value="nuevoRegistro">Añadir Registro</option>
+            <option value="editaRegistro">Modificar Registro</option>
+            <option value="eliminaRegistro">Eliminar Registro</option>
+        </select>
+        <br><br><br>
+        <!-- Div que se mostrará al añadir un registro nuevo. Contiene el formulario para añadir un registro nuevo -->
+        <div id="nuevo" style="display:none;">     
+                <form method="post" action="" name="form_alta">
+                    <table style="text-align:left">
+                        
+                        <tr>
+                            <td>ASIGNATURA</td>
+                            <td><input type="text" id="asignatura" placeholder="Desarrollo Web Entorno Cliente" required size="27"></td>
+                        </tr>
+                        <tr>
+                            <td>PROFESOR</td>
+                            <td><input type="text" id="profesor" placeholder="Adrián Torres" required size="24"></td>
+                        </tr>
+                        <tr>
+                            <td>CURSO</td>
+                            <td><input type="text" id="curso" placeholder="1617-1S " required size="21"></td>
+                        </tr>
+                        <tr>
+                            <td>FECHA</td>
+                            <td><input type="date" id="fecha" value="2016-09-30" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="mensaje"></td>
+                        </tr>
+                        <tr style="text-align:center">
+                            <td><input type="reset" value="Limpiar"></td>
+                            <td><input type="button" value="Añadir" onclick="anadirRegistro()"></td>
+                        </tr>
+                    </table>
+                </form>
+        </div>
+        
+        <!-- Div que se muestra al seleccionar la opción de modificar. Contiene otro div que se conformará dinámicamente mediante las funciones JavaScript -->
+        <div id="edita" style="display:none;"><br>
+            <label for="sel_mod">Selecciona el registro a modificar</label><br>
+            <div id="opcMod">
+            </div>
+        </div>
+        <!-- Div que se muestra al seleccionar la opción de eliminar. Contiene 2 divs que se conformarán dinámicamente mediante las funciones JavaScript -->
+        <div id="elimina" style="display:none;"><br>
+            <label for="sel_elim">Selecciona el registro a eliminar</label><br>
+            <div id="opcElim"></div><br>
+            <div id="opcElim2"></div>
+            
+        </div>
+        
+        
+        
+    
+    
+    
+    
+    </section>
+    
+    <footer>
+        <p>ILERNA - Passeig de Ronda, 152-154,  25008 (Lleida) España - 973 727 878 - info@ilerna.com</p>
+    </footer>
+
+</body>
+</html>
